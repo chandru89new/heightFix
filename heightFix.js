@@ -29,12 +29,8 @@ jQuery.fn.heightFix = function(options){
 			heights.push(height);
 		})
 
-		// console.log(heights);
-
 		max = Math.max.apply(null, heights);
 		min = Math.min.apply(null, heights);
-
-		// console.log(max, min);
 
 		// the function that decides what value will be stored in finalHeight
 		switch (options.type){
@@ -46,15 +42,11 @@ jQuery.fn.heightFix = function(options){
 				break;
 		}
 
-		console.log(finalHeight);
-
 		// now we have max/min value. apply it for all children
 		elem.find(options.child).each(function(){
 			$(this).height(finalHeight);
 		});
 
-
 	});
-
 
 }
